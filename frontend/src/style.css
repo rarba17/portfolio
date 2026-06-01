@@ -168,6 +168,39 @@ h2 {
   font-weight: 500;
 }
 
+.experience-wrap {
+  margin-bottom: 3.5rem;
+}
+
+.experience-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.experience-item {
+  border: 2px solid #1f2023;
+  background: #f1dda4;
+  padding: 1rem;
+}
+
+.experience-item h3 {
+  margin: 0.2rem 0 0.35rem;
+  font-family: "Fraunces", serif;
+  font-size: 1.15rem;
+}
+
+.experience-item p {
+  margin: 0;
+  max-width: 72ch;
+  line-height: 1.45;
+}
+
+.experience-period {
+  font-size: 0.84rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
 .project-panel {
   border: 2px solid #1f2023;
   min-height: 330px;
@@ -429,6 +462,7 @@ h2 {
   }
 
   .about-wrap,
+  .experience-item,
   .project-panel {
     padding: 0.8rem;
   }
