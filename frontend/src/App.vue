@@ -5,6 +5,7 @@
     <header class="frame edge-reveal">
       <p class="kicker">ABRAR // FULL-STACK</p>
       <nav aria-label="Primary">
+        <a href="#about">About</a>
         <a href="#work">Work</a>
         <a href="#process">Process</a>
         <a href="#connect">Connect</a>
@@ -19,6 +20,18 @@
             “The interface is not the decoration around data. It is the argument for how to act on it.”
           </p>
         </aside>
+      </section>
+
+      <section id="about" class="frame about-wrap reveal-left">
+        <h2>About Me</h2>
+        <p class="about-lead">
+
+I'm a final-year B.E. student at BITS Pilani, Hyderabad, passionate about building production AI systems that solve real problems. Despite my Civil Engineering background, I taught myself backend development and AI/ML over the past two years and I've shipped production systems to prove it. I specialize in multi-agent LLM workflows, RAG pipelines, and scalable backend infrastructure. I thrive at the intersection of technical depth and business impact, and I'm always curious about how things work under the hood.
+        </p>
+        <p>
+          I work across LLMs, APIs, and data flows, with attention to performance, maintainability, and
+          features that solve real workflow problems.
+        </p>
       </section>
 
       <section id="work" class="frame work-wrap">

@@ -12,11 +12,11 @@
 <script setup>
 import { onMounted, ref } from "vue";
 
-const snippet = `const work = {
-  medium: ["code", "copy", "motion"],
-  goal: "make complexity readable",
-  default: "ship with evidence"
-};`;
+const snippet = `work = {
+    "medium": ["code", "Understand", "Sprint"],
+    "goal": "make complexity readable",
+    "default": "ship with evidence"
+}`;
 
 const visibleText = ref("");
 

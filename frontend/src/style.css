@@ -145,12 +145,27 @@ h2 {
 
 .project-rail {
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(250px, 32vw);
-  gap: 0.8rem;
-  overflow-x: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
   padding: 0.8rem 0.1rem 1rem;
-  scrollbar-width: thin;
+}
+
+.about-wrap {
+  margin-bottom: 2.2rem;
+  padding: 1.2rem;
+  border: 2px solid #1f2023;
+  background: #efe7d5;
+}
+
+.about-wrap p {
+  margin: 0.4rem 0 0;
+  max-width: 72ch;
+  line-height: 1.5;
+}
+
+.about-lead {
+  font-size: 1.05rem;
+  font-weight: 500;
 }
 
 .project-panel {
@@ -360,9 +375,6 @@ h2 {
     transform: translateY(-14px) rotate(-2deg);
   }
 
-  .project-rail {
-    grid-auto-columns: minmax(76vw, 80vw);
-  }
 
   .custom-cursor {
     display: none;

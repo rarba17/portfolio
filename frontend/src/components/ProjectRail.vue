@@ -2,7 +2,7 @@
   <section class="reveal-right">
     <div class="section-head">
       <h2>Selected Work</h2>
-      <p class="opacity-80 text-sm">Drag sideways or scroll. Each tile is a real delivery with constraints.</p>
+      <p class="opacity-80 text-sm">Each tile is a real delivery with constraints.</p>
     </div>
     <div class="project-rail" aria-label="Selected projects">
       <article v-for="project in projects" :key="project.id" :class="['project-panel', `mood-${project.mood}`]">
