@@ -41,7 +41,13 @@ export const usePortfolioStore = defineStore("portfolio", {
           body: formData
         });
         const body = await res.json();
-        if (!res.ok) throw new Error(body.detail || "Message failed");
+        if (!res.ok) {
+          const detail = body.detail;
+          const msg = Array.isArray(detail)
+            ? detail.map((e) => e.msg).join("; ")
+            : detail || "Message failed";
+          throw new Error(msg);
+        }
         this.contactStatus = "Message sent.";
       } catch (error) {
         this.contactStatus = error.message;

@@ -38,7 +38,7 @@ I'm a final-year B.E. student at BITS Pilani, Hyderabad, passionate about buildi
         <ProjectRail :projects="store.projects" />
       </section>
 
-      <section id="process" class="frame process-wrap reveal-clip">
+      <section id="process" class="frame process-wrap reveal-right">
         <h2>Process</h2>
         <p>
           I start with workflows, not components. First: where decisions happen and who is blocked.
@@ -62,8 +62,8 @@ I'm a final-year B.E. student at BITS Pilani, Hyderabad, passionate about buildi
         </p>
         <div class="links-row">
           <button type="button" @click="copyEmail">Copy Email</button>
-          <a href="https://github.com/yourname" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://linkedin.com/in/yourname" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/rarba17" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/mohammed-abrar-ahmed-052a5725a/" target="_blank" rel="noreferrer">LinkedIn</a>
           <a href="/api/resume">Download Resume</a>
         </div>
 
@@ -121,7 +121,7 @@ function moveCursor(event) {
 
 async function copyEmail() {
   try {
-    await navigator.clipboard.writeText("hello@yourname.dev");
+    await navigator.clipboard.writeText("mmaapril42@gmail.com");
     copied.value = true;
     setTimeout(() => (copied.value = false), 1200);
   } catch (_error) {
@@ -143,17 +143,45 @@ async function submitContact() {
 }
 
 onMounted(async () => {
-  await Promise.all([store.fetchProjects(), store.fetchArticles()]);
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("in-view");
+  try {
+    await Promise.all([store.fetchProjects(), store.fetchArticles()]);
+  } catch (error) {
+    console.error("Error fetching store data:", error);
+    // Continue even if fetch fails - reveal animations should still work
+  }
+
+  // Use setTimeout to ensure DOM is fully rendered before setting up observer
+  setTimeout(() => {
+    try {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              // Unobserve after animation to improve performance
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1, rootMargin: "50px" }
+      );
+
+      const revealElements = document.querySelectorAll(
+        ".reveal-left, .reveal-right, .reveal-spin, .reveal-clip, .edge-reveal"
+      );
+
+      revealElements.forEach((el) => {
+        observer.observe(el);
+
+        // For elements already in view on page load, trigger animation immediately
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+          el.classList.add("in-view");
+          observer.unobserve(el);
+        }
       });
-    },
-    { threshold: 0.25 }
-  );
-  document
-    .querySelectorAll(".reveal-left, .reveal-right, .reveal-spin, .reveal-clip, .edge-reveal")
-    .forEach((el) => observer.observe(el));
+    } catch (error) {
+      console.error("Error setting up reveal animations:", error);
+    }
+  }, 100);
 });
 </script>

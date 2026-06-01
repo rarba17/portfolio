@@ -3,9 +3,9 @@ __pycache__/
 .env
 .venv/
 node_modules/
-dist/
 *.pyc
 venv/
 /backend/venv
-public
 .vscode/
+
+backend/.env

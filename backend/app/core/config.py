@@ -32,4 +32,4 @@ settings = Settings()
 BASE_DIR = Path(__file__).resolve().parents[2]
 ROOT_DIR = BASE_DIR.parent
 FRONTEND_DIST_DIR = ROOT_DIR / "frontend" / "dist"
-RESUME_FILE = ROOT_DIR / "public" / "resume.pdf"
+RESUME_FILE = ROOT_DIR / "public" / "Mohammed Abrar Ahmed.pdf"

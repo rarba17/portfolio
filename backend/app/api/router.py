@@ -50,7 +50,7 @@ def download_resume() -> FileResponse:
     return FileResponse(
         path=RESUME_FILE,
         media_type="application/pdf",
-        filename="resume.pdf",
+        filename="Mohammed Abrar Ahmed.pdf",
     )
 
 
