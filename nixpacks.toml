@@ -1,0 +1,5 @@
+# Tell Nixpacks to install both Node.js and Python.
+# Without this, it only detects Python (from backend/requirements.txt)
+# and npm is missing when the build command runs.
+[phases.setup]
+nixPkgs = ["nodejs_20", "python311"]
