@@ -44,8 +44,10 @@ I'm a final-year B.E. student at BITS Pilani, Hyderabad, passionate about buildi
             <p>
               I designed RESTful APIs supporting 50+ concurrent users with sub-200ms response times,
               orchestrated multi-agent LLM workflows using Langchain/Langgraph processing 500+ requests/day, and engineered document-processing systems achieving 95% extraction accuracy across 2500+ documents.
-              Learnings from Questt.Ai:
-              At Questt, I went deep on technical implementation—building APIs, working with AI systems, solving complex data engineering challenges, and building forecasting models. But the communication and requirement-gathering skills from GMR Group helped me understand the 'why' behind what we were building, not just the 'how.
+            </p>
+            <p>
+              <span class="learning-label">Learnings from Questt.Ai:</span>
+              At Questt, I went deep on technical implementation building APIs, working with AI systems, solving complex data engineering challenges, and building forecasting models. But the communication and requirement-gathering skills from GMR Group helped me understand the 'why' behind what we were building, not just the 'how'.
             </p>
           </article>
           <article class="experience-item">
@@ -53,16 +55,15 @@ I'm a final-year B.E. student at BITS Pilani, Hyderabad, passionate about buildi
             <h3>CSR Analyst   -   GMR Group</h3>
             <p>
               Monitoring and evaluating CSR projects to ensure they aligned with the company's
-              social impact goals
-              Managing project data, which involved collecting, organizing, and analyzing
-              information for comprehensive reporting
-              Engaging directly with stakeholders, including community members and partner
-              organizations, to understand needs and support various initiatives
-              Preparing compliance reports for both management and regulatory bodies, ensuring
-              adherence to CSR guidelines and regulations
-            Learnings from GMR Group:
-            At GMR, I learned how to think about business value and communicate with non-technical
-            stakeholders. I also gained exposure to working in a large organization, understanding compliance and managing large datasets skills that proved surprisingly relevant when I later moved into AI-focused roles.
+              social impact goals. Managing project data, which involved collecting, organizing, and analyzing
+              information for comprehensive reporting. Engaging directly with stakeholders, including community members and partner
+              organizations, to understand needs and support various initiatives. Preparing compliance reports for both management and regulatory bodies, ensuring
+              adherence to CSR guidelines and regulations.
+            </p>
+            <p>
+              <span class="learning-label">Learnings from GMR Group:</span>
+              At GMR, I learned how to think about business value and communicate with non-technical
+              stakeholders. I also gained exposure to working in a large organization, understanding compliance and managing large datasets skills that proved surprisingly relevant when I later moved into AI-focused roles.
             </p>
           </article>
         </div>

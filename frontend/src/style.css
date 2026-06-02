@@ -201,6 +201,14 @@ h2 {
   letter-spacing: 0.04em;
 }
 
+.learning-label {
+  display: block;
+  font-weight: 700;
+  color: #a7482f;
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.01em;
+}
+
 .project-panel {
   border: 2px solid #1f2023;
   min-height: 330px;
