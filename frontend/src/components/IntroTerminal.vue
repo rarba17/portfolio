@@ -1,31 +1,32 @@
 <template>
-  <section class="intro-shell reveal-left">
-    <p class="text-xs tracking-[0.12em] uppercase opacity-70">Session log</p>
-    <pre class="terminal">{{ visibleText }}<span class="cursor">_</span></pre>
-    <p class="mt-4 max-w-xl text-sm leading-relaxed opacity-90">
-      I build systems that feel intentional under pressure: fast APIs, tactile interfaces, and tools
-      that help teams decide instead of just display.
-    </p>
+  <section class="intro-terminal">
+    <p class="terminal-label">Session Log ✱</p>
+    <pre class="terminal-content">{{ visibleText }}<span class="cursor">_</span></pre>
   </section>
 </template>
 
 <script setup>
 import { onMounted, ref } from "vue";
 
-const snippet = `work = {
-    "medium": ["code", "Understand", "Sprint"],
-    "goal": "make complexity readable",
-    "default": "ship with evidence"
+const snippet = `runbook = {
+  "goal": "make complexity readable",
+  "default": "ship with evidence",
+  "systems": ["APIs", "agents", "data flows"]
 }`;
 
 const visibleText = ref("");
 
 onMounted(() => {
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    visibleText.value = snippet;
+    return;
+  }
+
   let idx = 0;
   const timer = setInterval(() => {
     visibleText.value = snippet.slice(0, idx);
     idx += 2;
     if (idx > snippet.length) clearInterval(timer);
-  }, 18);
+  }, 16);
 });
 </script>

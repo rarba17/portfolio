@@ -1,105 +1,130 @@
 <template>
-  <div class="site-shell" @mousemove="moveCursor">
-    <div class="custom-cursor" :style="cursorStyle" />
+  <div class="site-shell">
+    <div class="marquee-band" aria-hidden="true">
+      <div class="marquee-track">
+        HYDERABAD ✱ PRODUCTION AI ✱ BACKEND SYSTEMS ✱ RAG + AGENTS ✱ MCP ✱ HYDERABAD ✱
+      </div>
+    </div>
 
-    <header class="frame edge-reveal">
-      <p class="kicker">ABRAR // FULL-STACK</p>
+    <header class="site-header frame reveal-fade">
+      <a class="brand" href="#about">◆ MOHAMMED ABRAR AHMED</a>
       <nav aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#experiences">Experiences</a>
-        <a href="#work">Work</a>
-        <a href="#process">Process</a>
-        <a href="#connect">Connect</a>
+        <a
+          v-for="item in navItems"
+          :key="item.id"
+          :href="item.href"
+          :class="{ 'is-active': activeSection === item.id }"
+          :aria-current="activeSection === item.id ? 'page' : undefined"
+        >
+          {{ item.label }}
+        </a>
       </nav>
+      <a class="resume-link" href="/api/resume">Resume ↗</a>
     </header>
 
     <main>
-      <section class="frame intro-wrap">
+      <section id="about" class="frame hero-wrap reveal-up">
+        <p class="catalog-line">◆ Portfolio · Open to Software Engineering + AI Engineering roles</p>
+        <h1>
+          SHIP<br />
+          WITH EVIDENCE.
+        </h1>
+
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p>
+              I’m a Recent Graduate from <b>BITS Pilani</b>, building production AI products that
+              survive real constraints: latency, messy data, and evolving business requirements.
+            </p>
+            <p>
+              I work across multi-agent LLM workflows, RAG, APIs, and backend infrastructure with a product
+              lens focused on decision quality and operational reliability.
+            </p>
+            <div class="hero-actions">
+              <a href="#work">View selected work</a>
+              <a href="#connect">Contact</a>
+            </div>
+          </div>
+
+          <aside class="hero-meta" aria-label="Profile facts">
+            <p><span>Focus</span> Production AI + Backend</p>
+            <p><span>Primary stack</span> FastAPI · LangChain · LangSmith · LangGraph · PostgreSQL · Redis · Celery · Node.js · Express.js · MongoDB · VectorDB's </p>
+            <p><span>Current base</span> Hyderabad, India</p>
+            <p><span>Best channel</span> Email</p>
+          </aside>
+        </div>
+
         <IntroTerminal />
-        <aside class="quote reveal-spin">
-          <p>
-            “The interface is not the decoration around data. It is the argument for how to act on it.”
-          </p>
-        </aside>
       </section>
 
-      <section id="about" class="frame about-wrap reveal-left">
-        <h2>About Me</h2>
-        <p class="about-lead">
 
-I'm a final-year B.E. student at BITS Pilani, Hyderabad, passionate about building production AI systems that solve real problems. Despite my Civil Engineering background, I taught myself backend development and AI/ML over the past two years and I've shipped production systems to prove it. I specialize in multi-agent LLM workflows, RAG pipelines, and scalable backend infrastructure. I thrive at the intersection of technical depth and business impact, and I'm always curious about how things work under the hood.
-        </p>
-        <p>
-          I work across LLMs, APIs, and data flows, with attention to performance, maintainability, and
-          features that solve real workflow problems.
-        </p>
-      </section>
 
-      <section id="experiences" class="frame experience-wrap reveal-right">
+      <section id="experiences" class="frame experiences-wrap reveal-right">
         <h2>Experiences</h2>
-        <div class="experience-list">
-          <article class="experience-item">
-            <p class="experience-period">2025 - July - Dec</p>
-            <h3>Software Engineer Intern   -   Questt.Ai</h3>
-            <p>
-              I designed RESTful APIs supporting 50+ concurrent users with sub-200ms response times,
-              orchestrated multi-agent LLM workflows using Langchain/Langgraph processing 500+ requests/day, and engineered document-processing systems achieving 95% extraction accuracy across 2500+ documents.
-            </p>
-            <p>
-              <span class="learning-label">Learnings from Questt.Ai:</span>
-              At Questt, I went deep on technical implementation building APIs, working with AI systems, solving complex data engineering challenges, and building forecasting models. But the communication and requirement-gathering skills from GMR Group helped me understand the 'why' behind what we were building, not just the 'how'.
-            </p>
+        <div class="exp-list">
+          <article class="exp-item">
+            <p class="exp-index"> </p>
+            <p class="experience-period">July 2025 — December 2025</p>
+            <h3>Software Engineer Intern · Questt.Ai</h3>
+            <ul>
+              <li>Built REST APIs serving 50+ concurrent users at sub-200ms latency.</li>
+              <li>Orchestrated LangChain/LangGraph workflows processing 500+ requests/day.</li>
+              <li>Engineered document extraction pipelines at ~95% accuracy over 2,500+ files.</li>
+            </ul>
           </article>
-          <article class="experience-item">
-            <p class="experience-period">2024 - May-July</p>
-            <h3>CSR Analyst   -   GMR Group</h3>
-            <p>
-              Monitoring and evaluating CSR projects to ensure they aligned with the company's
-              social impact goals. Managing project data, which involved collecting, organizing, and analyzing
-              information for comprehensive reporting. Engaging directly with stakeholders, including community members and partner
-              organizations, to understand needs and support various initiatives. Preparing compliance reports for both management and regulatory bodies, ensuring
-              adherence to CSR guidelines and regulations.
-            </p>
-            <p>
-              <span class="learning-label">Learnings from GMR Group:</span>
-              At GMR, I learned how to think about business value and communicate with non-technical
-              stakeholders. I also gained exposure to working in a large organization, understanding compliance and managing large datasets skills that proved surprisingly relevant when I later moved into AI-focused roles.
-            </p>
+
+          <article class="exp-item">
+            <p class="exp-index"> </p>
+            <p class="experience-period">May 2024 — July 2024</p>
+            <h3>CSR Analyst · GMR Group</h3>
+            <ul>
+              <li>Owned project monitoring/reporting workflows for compliance and impact visibility.</li>
+              <li>Worked with stakeholders to translate field requirements into action plans.</li>
+              <li>Developed business communication rigor now applied to AI product delivery.</li>
+            </ul>
           </article>
         </div>
       </section>
 
-      <section id="work" class="frame work-wrap">
-        <ProjectRail :projects="store.projects" />
+      <section id="work" class="frame work-wrap reveal-up">
+        <ProjectRail
+          :projects="store.projects"
+          :loading="store.loadingProjects"
+          :using-fallback="store.usingProjectFallback"
+        />
       </section>
 
-      <section id="process" class="frame process-wrap reveal-right">
+      <section id="process" class="frame process-wrap reveal-left">
         <h2>Process</h2>
-        <p>
-          I start with workflows, not components. First: where decisions happen and who is blocked.
-          Then I shape data contracts and interaction states together, so backend and frontend evolve as
-          one product surface.
-        </p>
-        <p>
-          I choose constraints early: latency budgets, observability points, error boundaries, and failure
-          messaging. That keeps polish honest and makes the system easier to grow without rewrites.
-        </p>
-        <!-- Intentional overlap: this "field note" breaks the regular flow to avoid template-like page rhythm. -->
-        <div class="field-note">
-          <span>Field note:</span> Ship explainability, not just speed.
+        <div class="process-list">
+          <article>
+            <p class="step">01</p>
+            <h3>Map Bottlenecks</h3>
+            <p>Identify blocked decisions, user friction, and risky handoffs first.</p>
+          </article>
+          <article>
+            <p class="step">02</p>
+            <h3>Define Contracts</h3>
+            <p>Set API/data contracts, failure paths, and observability checkpoints early.</p>
+          </article>
+          <article>
+            <p class="step">03</p>
+            <h3>Ship in Slices</h3>
+            <p>Release measurable increments, evaluate outcomes, and tighten reliability.</p>
+          </article>
         </div>
       </section>
 
-      <section id="connect" class="frame connect-wrap reveal-left">
-        <h2>Contact / Connect</h2>
-        <p class="lead">
-          Best channel is email. Social links stay open if that fits your workflow better.
+      <section id="connect" class="frame connect-wrap reveal-fade">
+        <h2>Connect</h2>
+        <p class="connect-lead">
+          If you’re hiring for backend or AI systems, I’d love to contribute.
         </p>
+
         <div class="links-row">
           <button type="button" @click="copyEmail">Copy Email</button>
-          <a href="https://github.com/rarba17" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/mohammed-abrar-ahmed-052a5725a/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href="/api/resume">Download Resume</a>
+          <a href="https://github.com/rarba17" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/mohammed-abrar-ahmed-052a5725a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
 
         <form class="contact-form" @submit.prevent="submitContact">
@@ -118,15 +143,21 @@ I'm a final-year B.E. student at BITS Pilani, Hyderabad, passionate about buildi
           <button type="submit" :disabled="store.sendingMessage">
             {{ store.sendingMessage ? "Sending..." : "Send Note" }}
           </button>
-          <p class="status">{{ statusText }}</p>
+          <p class="status" role="status" aria-live="polite">{{ statusText }}</p>
         </form>
       </section>
     </main>
+
+    <div class="marquee-band inverse" aria-hidden="true">
+      <div class="marquee-track">
+        ABRAR AHMED ◆ FASTAPI ◆ AGENTS ◆ RAG ◆ PRODUCTION SYSTEMS ◆ NODE.JS ◆
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { computed, onMounted, reactive, ref } from "vue";
+import { computed, onBeforeUnmount, onMounted, reactive, ref } from "vue";
 import IntroTerminal from "./components/IntroTerminal.vue";
 import ProjectRail from "./components/ProjectRail.vue";
 import { usePortfolioStore } from "./stores/portfolio";
@@ -138,21 +169,25 @@ const form = reactive({
   message: ""
 });
 
-const cursor = ref({ x: 0, y: 0 });
 const copied = ref(false);
+const reduceMotion = ref(false);
+const activeSection = ref("about");
 
-const cursorStyle = computed(() => ({
-  transform: `translate(${cursor.value.x}px, ${cursor.value.y}px)`
-}));
+const navItems = [
+  { id: "about", label: "About", href: "#about" },
+  { id: "experiences", label: "Experiences", href: "#experiences" },
+  { id: "work", label: "Work", href: "#work" },
+  { id: "process", label: "Process", href: "#process" },
+  { id: "connect", label: "Connect", href: "#connect" }
+];
+
+let revealObserver;
+let sectionObserver;
 
 const statusText = computed(() => {
   if (copied.value) return "Email copied.";
   return store.contactStatus;
 });
-
-function moveCursor(event) {
-  cursor.value = { x: event.clientX, y: event.clientY };
-}
 
 async function copyEmail() {
   try {
@@ -169,6 +204,7 @@ async function submitContact() {
   payload.append("name", form.name);
   payload.append("email", form.email);
   payload.append("message", form.message);
+
   await store.submitContact(payload);
   if (store.contactStatus === "Message sent.") {
     form.name = "";
@@ -178,45 +214,60 @@ async function submitContact() {
 }
 
 onMounted(async () => {
+  if (window.matchMedia) {
+    reduceMotion.value = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  }
+
   try {
     await Promise.all([store.fetchProjects(), store.fetchArticles()]);
   } catch (error) {
     console.error("Error fetching store data:", error);
-    // Continue even if fetch fails - reveal animations should still work
   }
 
-  // Use setTimeout to ensure DOM is fully rendered before setting up observer
-  setTimeout(() => {
-    try {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("in-view");
-              // Unobserve after animation to improve performance
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: "50px" }
-      );
+  const revealElements = document.querySelectorAll(".reveal-up, .reveal-left, .reveal-right, .reveal-fade");
 
-      const revealElements = document.querySelectorAll(
-        ".reveal-left, .reveal-right, .reveal-spin, .reveal-clip, .edge-reveal"
-      );
+  if (reduceMotion.value) {
+    revealElements.forEach((element) => element.classList.add("in-view"));
+  } else {
+    revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.16, rootMargin: "24px" }
+    );
 
-      revealElements.forEach((el) => {
-        observer.observe(el);
+    revealElements.forEach((element) => revealObserver.observe(element));
+  }
 
-        // For elements already in view on page load, trigger animation immediately
-        if (el.getBoundingClientRect().top < window.innerHeight) {
-          el.classList.add("in-view");
-          observer.unobserve(el);
-        }
-      });
-    } catch (error) {
-      console.error("Error setting up reveal animations:", error);
+  sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const visible = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (visible?.target?.id) {
+        activeSection.value = visible.target.id;
+      }
+    },
+    {
+      threshold: [0.3, 0.5, 0.7],
+      rootMargin: "-22% 0px -55% 0px"
     }
-  }, 100);
+  );
+
+  navItems.forEach((item) => {
+    const section = document.getElementById(item.id);
+    if (section) sectionObserver.observe(section);
+  });
+});
+
+onBeforeUnmount(() => {
+  if (revealObserver) revealObserver.disconnect();
+  if (sectionObserver) sectionObserver.disconnect();
 });
 </script>
